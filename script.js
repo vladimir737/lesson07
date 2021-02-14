@@ -54,11 +54,11 @@ let meaning = function checkNumMeaning(variable, info) {
       return Math.floor(appData.getBudget() / 30);
     },
     getStatusIncome: function(){
-      if(appData.getBudget() >= 1200) {
+      if(appData.budgetDay() >= 1200) {
         return 'У вас высокий уровень дохода';
-      } else if (appData.getBudget() < 1200 && appData.getBudget() >= 600) {
+      } else if (appData.budgetDay() < 1200 && appData.budgetDay() >= 600) {
         return 'У вас средний уровень дохода';
-      } else if (appData.getBudget() < 600 && appData.getBudget() >= 0) {
+      } else if (appData.budgetDay() < 600 && appData.budgetDay() >= 0) {
         return 'К сожалению у вас уровень дохода ниже среднего';
       } else {
         return 'Что то пошло не так';
@@ -79,7 +79,7 @@ let meaning = function checkNumMeaning(variable, info) {
   console.log(`Цель заработать ${appData.mission} рублей`); 
   console.log(`Расходы за месяц: ${appData.getExpensesMonth()}`);
   console.log(appData.checkTarget());  
-  console.log(appData.getStatusIncome());
+  console.log(appData.getStatusIncome());  
   console.log('Наша программа включает в себя: ');
   for (let key in appData) {
     console.log(key + ' :' + appData[key]);
